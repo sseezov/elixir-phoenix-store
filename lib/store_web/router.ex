@@ -8,6 +8,7 @@ defmodule StoreWeb.Router do
     plug :put_root_layout, html: {StoreWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug StoreWeb.Plugs.Locale, "en"
   end
 
   pipeline :api do
@@ -19,7 +20,19 @@ defmodule StoreWeb.Router do
 
     get "/", PageController, :home
     get "/hello", HelloController, :index
+    get "/hello/:messenger", HelloController, :show
+    # resources "/users", UserController
   end
+
+  # scope "/admin", StoreWeb.Admin do
+  #   pipe_through :browser
+
+  #   resources "/reviews", ReviewController
+  # end
+
+
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", StoreWeb do
