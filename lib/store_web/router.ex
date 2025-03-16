@@ -2,7 +2,7 @@ defmodule StoreWeb.Router do
   use StoreWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, html: {StoreWeb.Layouts, :root}
@@ -19,8 +19,10 @@ defmodule StoreWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/flashy", PageController, :flashy
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+    get "/redirect_test", PageController, :redirect_test
     # resources "/users", UserController
   end
 

@@ -7,7 +7,7 @@ defmodule StoreWeb.HelloController do
 
   def show(conn, %{"messenger" => messenger}) do
     # text(conn, "Hello, from #{messenger}")
-    json(conn, %{id: messenger})
-    # render(conn, :show, messenger: messenger)
+    # json(conn, %{id: messenger})
+    render(conn, :show, messenger: messenger)
   end
 end
