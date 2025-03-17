@@ -4,8 +4,8 @@ defmodule StoreWeb.PageController do
   def home(conn, _params) do
     # The home page is often custom made,
     # so skip the default app layout.
-    redirect(conn, to: ~p"/redirect_test")
-    # render(conn, :home, layout: false)
+    # redirect(conn, to: ~p"/redirect_test")
+    render(conn, :home, layout: false)
   end
 
   def flashy(conn, _params) do
@@ -14,7 +14,7 @@ defmodule StoreWeb.PageController do
     |> render(:flashy, layout: false)
   end
 
-  def redirect_test(conn, _params) do
-    render(conn, :home, layout: false)
-  end
+  # def redirect_test(conn, _params) do
+  #   render(conn, :home, layout: false)
+  # end
 end
