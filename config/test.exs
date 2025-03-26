@@ -7,7 +7,7 @@ import Config
 # Run `mix help test` for more information.
 config :store, Store.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "219219",
   hostname: "localhost",
   database: "store_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,

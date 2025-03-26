@@ -22,6 +22,7 @@ defmodule StoreWeb.Router do
     get "/flashy", PageController, :flashy
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+    resources "/products", ProductController
     # get "/redirect_test", PageController, :redirect_test
     # resources "/users", UserController
   end
