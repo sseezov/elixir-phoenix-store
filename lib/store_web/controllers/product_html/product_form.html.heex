@@ -6,6 +6,7 @@
   <.input field={f[:description]} type="text" label="Description" />
   <.input field={f[:price]} type="number" label="Price" step="any" />
   <.input field={f[:views]} type="number" label="Views" />
+  <.input field={f[:category_ids]} type="select" multiple={true} options={category_opts(@changeset)} />
   <:actions>
     <.button>Save Product</.button>
   </:actions>
